@@ -9,16 +9,17 @@ const App = () => {
 
     return (
         <div className={darkTheme ? 'dark' : ''}>
-            <div className="bg-gray-200 dark:bg-gray-900 dark:text-gray-200 min-h-screen">
+            <div className="dark:bg-gray-900 dark:text-gray-200 min-h-screen">
                 <Navbar darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
                 <div className="p-4">
-            <Rts>
-                 <Route path="/" element={<Navigate replace to='/search' />} />
-                 <Route path="/search" element={<Results />}/>
-                 <Route path="/images" element={<Results />}/>
-                 <Route path="/videos" element={<Results />}/>
-            </Rts>
-        </div>
+                    <Rts>
+                        <Route path="/" element={<Navigate replace to='/search' />} />
+                        <Route path="/search" element={<Results />} />
+                        <Route path="/images" element={<Results />} />
+                        <Route path="/videos" element={<Results />} />
+                        <Route path="/news" element={<Results />} />
+                    </Rts>
+                </div>
                 <Footer />
             </div>
         </div>
