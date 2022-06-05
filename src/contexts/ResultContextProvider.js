@@ -31,7 +31,6 @@ export const ResultContextProvider = ({ children }) => {
             setResults(data.results)
         }
 
-        console.log(data);
         setIsLoading(false);
 
     }
