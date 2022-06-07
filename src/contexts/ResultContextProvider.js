@@ -17,7 +17,7 @@ export const ResultContextProvider = ({ children }) => {
                 'X-User-Agent': 'desktop',
                 'X-Proxy-Location': 'EU',
                 'X-RapidAPI-Host': 'google-search3.p.rapidapi.com',
-                'X-RapidAPI-Key': process.env.REACREACT_APP_API_KEY
+                'X-RapidAPI-Key': '4011b8b268msh959f525ac7596afp16af7djsn2514f0db3300'
             }
         });
 
@@ -25,9 +25,10 @@ export const ResultContextProvider = ({ children }) => {
 
         if (type.includes('/news')) {
             setResults(data.entries);
-        } else if (type.includes('/images')) {
+        } else if (type.includes('/image')) {
             setResults(data.image_results)
         } else {
+            console.log(data);
             setResults(data.results)
         }
 
@@ -43,3 +44,6 @@ export const ResultContextProvider = ({ children }) => {
 }
 
 export const useResultContext = () => useContext(ResultContext);
+
+// https://google-search3.p.rapidapi.com/api/v1/search/q=Elon%20Musk&num=40
+// https://google-search3.p.rapidapi.com/api/v1/search/q=elon+musk
