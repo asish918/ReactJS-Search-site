@@ -27,7 +27,7 @@ export const Results = () => {
         case '/search':
             return (
                 <div className="flex flex-wrap justify-between space-y-6 sm:px-56">
-                    {results?.map(({ link, title }, index) => (
+                    {results?.map(({ link, title, description }, index) => (
                         <div key={index} className="md:w-2/5 w-full">
                             <a href={link} target="_blank" rel="noreferrer">
                                 <p className="text-sm break-words">
@@ -36,6 +36,7 @@ export const Results = () => {
                                 <p className="text-lg hover:underline dark:text-blue-300 text-blue-700">
                                     {title}
                                 </p>
+                                <p className="text-md">{description}</p>
                             </a>
                         </div>
                     ))}
